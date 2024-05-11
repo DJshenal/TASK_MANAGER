@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">TASK MANAGER</string>
+    <string name="Title">Your Tasks</string>
+    <string name="header">New Goal</string>
+    <string name="Name">Name of the Goal</string>
+    <string name="Description">Description of the Goal</string>
+    <string name="timebtn">Select Time</string>
+    <string name="savebtn">Save</string>
+    <string name="Place_Holder">Place Holder</string>
+
+
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView android:id="@+id/taskcontainer"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    app:cardCornerRadius="10dp"
+    android:layout_margin="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_purpule">
+      <ImageButton
+          android:layout_width="30dp"
+          android:layout_height="30dp"
+          android:id="@+id/completebutton"
+          android:layout_marginHorizontal="20dp"
+          android:src="@drawable/radio"
+          android:layout_gravity="center"
+          android:scaleX="1.2"
+          android:scaleY="1.2"
+          android:contentDescription="Checkbox"
+          android:background="@android:color/transparent"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/name"
+            android:text="@string/Place_Holder"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/dueTime"
+            android:text="@string/Place_Holder"
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:textSize="20dp"
+            android:layout_marginHorizontal="10dp"/>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/deleteButton"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="10dp"
+            android:layout_gravity="center"
+            app:icon="@drawable/trash_bin"
+            app:iconSize="30dp"
+            app:iconTint="@color/purple"/>
+
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

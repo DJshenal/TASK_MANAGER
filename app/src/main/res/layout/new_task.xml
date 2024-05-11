@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context=".NewTaskSheet"
+    android:background="@drawable/rounded_corners"
+    >
+
+    <TextView
+        android:id="@+id/taskTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/header"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp" />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/name"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="20dp"
+            android:hint="@string/Name"
+            android:background="@drawable/input_border"
+            android:padding="15dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/desc"
+            android:hint="@string/Description"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="10dp"
+            android:background="@drawable/input_border"
+            android:padding="15dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:gravity="center">
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/timepickerbtn"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginHorizontal="20dp"
+            android:layout_marginVertical="15dp"
+            android:text="@string/timebtn"
+            app:icon="@drawable/time"
+            app:iconSize="30dp"
+            app:iconTint="@color/purple"/>
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/savebutton"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:layout_marginVertical="10dp"
+            android:layout_marginHorizontal="20dp"
+            android:text="@string/savebtn"
+            app:icon="@drawable/save"
+            app:iconSize="30dp"
+            app:iconTint="@color/purple"/>
+    </LinearLayout>
+
+
+</LinearLayout>
