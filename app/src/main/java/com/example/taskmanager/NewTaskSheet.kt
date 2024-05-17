@@ -12,6 +12,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.taskmanager.databinding.NewTaskBinding
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import java.time.LocalTime
+import android.widget.Toast
 
 class NewTaskSheet(private val taskItem: TaskItem? = null) : BottomSheetDialogFragment() {
 
@@ -73,21 +74,42 @@ class NewTaskSheet(private val taskItem: TaskItem? = null) : BottomSheetDialogFr
     }
 
     private fun saveAction() {
-        val name= binding.name.text.toString()
-        val desc = binding.desc.text.toString()
-        val dueTimeString = if(dueTime ==null )null else TaskItem.timeFormatter.format(dueTime)
-        if(taskItem == null){
-            val newTask= TaskItem(name,desc,dueTimeString,null)
-            taskViewModel.addTaskItem(newTask)
+        val name = binding.name.text.toString().trim()
+        val desc = binding.desc.text.toString().trim()
+        val dueTimeString = if (dueTime == null) null else TaskItem.timeFormatter.format(dueTime)
+
+        if (name.isEmpty()) {
+
+            Toast.makeText(requireContext(), "Task name cannot be empty", Toast.LENGTH_SHORT).show()
+            return
         }
-        else{
+
+        if (desc.isEmpty()) {
+
+            Toast.makeText(requireContext(), "Description cannot be empty", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (dueTime == null) {
+
+            Toast.makeText(requireContext(), "Due time must be selected", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        if (taskItem == null) {
+            val newTask = TaskItem(name, desc, dueTimeString, null)
+            taskViewModel.addTaskItem(newTask)
+        } else {
             taskItem!!.name = name
             taskItem!!.desc = desc
             taskItem!!.dueTimeString = dueTimeString
             taskViewModel.updateTaskItem(taskItem!!)
         }
+
         binding.name.setText("")
         binding.desc.setText("")
         dismiss()
     }
+
+
 }
